@@ -149,7 +149,7 @@ export default function CreatorsCompassHero() {
               long-term strategic advantage.
             </p>
             <a href="mailto:bg@creatorscompass.net" className="pill-btn">
-              <span className="pill-btn-inner">Contact Us</span>
+              <span className="pill-btn-inner">Contact</span>
             </a>
           </div>
         </div>
