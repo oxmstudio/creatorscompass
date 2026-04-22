@@ -142,7 +142,7 @@ export default function CreatorsCompassHero() {
 
         <div className="hero-content">
           <div className="hero-inner">
-            <img src="https://github.com/oxmstudio/creatorscompass/blob/main/components/creators_compass_logo.png"/>
+            <img src="https://ibb.co/NnTYs0qT"/>
             <h1 className="hero-heading">Where the Right People Find Each Other</h1>
             <p className="hero-subtitle">
               Creator's Compass connects founders, studios, and industry leaders with the partners,
