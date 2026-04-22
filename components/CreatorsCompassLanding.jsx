@@ -571,7 +571,7 @@ export default function CreatorsCompassLanding() {
             <div className="left-content">
               <nav className="nav">
                 <div className="nav-logo">
-                  <img className="nav-logo-image" src={CREST_LOGO} alt="Creator's Compass logo" />
+                  
                   <span className="nav-brand">Creator&apos;s Compass</span>
                 </div>
 
@@ -582,9 +582,7 @@ export default function CreatorsCompassLanding() {
               </nav>
 
               <div className="hero-center">
-                <div className="hero-logo">
-                  <img className="hero-logo-image" src={CREST_LOGO} alt="Creator's Compass crest" />
-                </div>
+                
 
                 <h1 className="hero-h1">
                   Guiding creators toward the <br />
