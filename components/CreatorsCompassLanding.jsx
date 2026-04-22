@@ -649,17 +649,7 @@ export default function CreatorsCompassLanding() {
                 </div>
               </div>
 
-              <div className="bottom-card liquid-glass">
-                <div className="thumb-logo">
-                  <img src={CREST_LOGO} alt="" aria-hidden="true" />
-                </div>
-
-                
-
-                <button className="plus-btn liquid-glass" style={{ borderRadius: '50%' }}>
-                  +
-                </button>
-              </div>
+              
             </div>
           </div>
         </div>
