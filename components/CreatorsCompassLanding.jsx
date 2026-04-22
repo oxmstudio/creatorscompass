@@ -1,10 +1,4 @@
-const SparklesIcon = ({ size = 16, color = 'currentColor' }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3z" />
-    <path d="M5 16l.9 2.1L8 19l-2.1.9L5 22l-.9-2.1L2 19l2.1-.9L5 16z" />
-    <path d="M19 14l1.2 2.8L23 18l-2.8 1.2L19 22l-1.2-2.8L15 18l2.8-1.2L19 14z" />
-  </svg>
-);
+const CREST_LOGO = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAEAAElEQVR42uy9d3ic1Zk+fM7b+/SiXixLtuUuGzfcsA3YmGLADgk1CQtZEsimbcJms7bTNwlJSFiyaZSQhCBTDDa2wUXulm259yZZXZo+8/Z6vj8yys/LEkL2gyxZdF+Xr0uWNKOZM+e5n/48AAxjGMMYxjCGMYxhDGMYwxjGMIYxjGEMYxjDGMYwhjGMYQxjGMMYxjCGMYxhDGMYwxjGMIYxjGEMYxjDGMYwhjGMYQxjGMMYxjCGMYxhDGMYwxjGMIYxjGEMYxjDGMYwhjGMYQxjGMMYxjCGMYz/DcDhI/j/B4TQfztDCCEaPplhDOP/KGkihDCEEPYXiAFbuXIl9nYEMYz/OdkWz/Tt/g2f87AF8L5fQAxC6A39f/ny5dRNN90UkiSJSaVSsKSkxDJNU1m2bFmw2Wzh6NGj5d+//vrrUVdXF44dOxbeffddymQy1dWrV8vOzk6+//77w2AwhMViCfPmzQtXXHFF2LJli1iyZEn44osv4tFHHw0nn3yy6HQ6WbJkSYiiiO+//77o7OxMcnJyoVAoQq/Xy7Zt2+LWW29Vh8ORnTt3hq+++koYhoG33npL2L17t9i/f7+QyWRh586d4vfff48QQmzaNMPx48ejv78/9uzZE2w2m3j//ffj8OHD8dVXXw1CCP7+/rF69Wo8+eSTYt++fcHv94vPP/88fPjhh+HcuXNx4sQJwzAMy7IoFAoxGo1s2LABb731VnjzzTfjrbfeio0bN0bTNDF8+PA4dOgQjhw5Evv27Ytnn302nHPOOQAg7HY7tm7dGhdffDF27NgRjzzyiOi6jv3798dzzz0Xtm/fHtu3b09BEMBnn30WAwYMiL1794YFCxYEYwzvvPNOnHnmmWjYsCHWrVsXpmli5syZsWXLlvjkk0/ilVdeieuvvz6uvfZaLFu2LJ555hnRNE2YTCbh6aefjhtuuCE6OjrC5/OJwWDAU089FS655BIMHDgwLrroIjF27NjYuXNnBAIBHHXUUbF7927x3HPPxbRp0+LJJ58MZ555Jn744Yf47bffxqFDh3DrrbeKpmkYhoHPfvazcfDgQdFqtbJ582Zs3bo13nvvvXj00UdjxYoVcdlll8W9994bZs+eHddee23st99+cdFFF4V77rkHAGDbtm2xdu3a+O233+Loo4+O73znO8FqtYqSkhJx6NAhLF68OJ566qlYtGhRDAaDkMvl8M0338RLL70UzzzzTLjzzjvD6XSGk08+OVatWhVXXHFFnHnmmXHjjTdGkiRUV1eHxx57LBYvXhyzZ8+OwYMHY9q0aeG+++6L7u7uOOWUU+K1116L888/Px588MFYuHBh2LZtWzjhhBOira0t+vv748ADD4zrr78+Lr744hgMBjFz5swYPHhweOSRR+Laa6+NefPmRWVlZTh16lT84Q9/iHPPPRe33npr7NixI1auXBkPPvhg3HLLLdHX1xePPfZYuO++++Lll18O27dvj5UrV8aTTz4ZF110Udx8882xYcOGYDKZ4uyzz47FixfHfffdF7/+9a8jiiLWrFkTV155ZRw9ejRuueWWmD17dixevDiuuOKK+PDDD2P16tXxzTffxMCBA+OMM86IhQsXxtKlS+Pee+8N27dvj6OOOipmzZqF7du3x9q1a+PFF1+MLVu2xM033xxPPfVUjB07Nn7xi1/E1VdfHfPnz4+77747Nm3aFCNGjIju7u7Izs6OW2+9NQ4ePBjjx4+Ptm3bYuTIkfHQQw/F9u3bY9y4cXHJJZeErVu3xqpVq2LixImxY8eO8Pb2jpUrV8Zbb70VJ554Yhx11FGxdu3amDVrVtx3332xePHi+PDDD2P79u1x5513RlVVVdTW1mLr1q3x5JNPxvTp0+O0006L4uJi/P3vf48jjjgiduzYEdu2bYvnnnsutmzZEjfffHM0NTXF7NmzY8CAAXHZZZeFXbt2xcMPPxyf/exnY/369WEwGMTtt98e7733Xvzyl7+M7du3x9KlS+PZZ58N3/72t6N///7x4IMPxrfffhv/8z//E8OHD48XX3wxrrvuuqivr4+SkhI899xzMWLEiHj66afjzTffjKqqqth///0YNGhQ7N27N0aOHBn33Xdf3HPPPfHQQw/FQw89FEOHDg0vvPBCnHnmmXHyySdHf39/HH300fHWW2/FsWPHYvLkyfH666/HZ599Fo888kjs2bMn1q1bF3fccUc899xz8eyzz8Zzzz0Xn376aRx//PFRV1eH4uJijBkzJoYMGRIrV66MZ599NlauXBkLFixAq9WKn/70p/H444/H/Pnz45RTTonNmzfHyJEjY86cOXHffffF8OHD4/33348rr7wy1qxZE8OHD4+LL744Pv7443jqqafi+eefj4suuig2b94c69evj6OPPjqee+65uPbaa2P16tXx8MMPx+zZs+Pqq6+OQYMGxbZt22LcuHFx5513xp133hmPP/54nHnmmVixYkVs3LgxlixZEg899FDcc8898eCDD8bChQvD6XQKQghVVVWxYsWKuPPOO+PBBx+M559/Pg4dOhQ///nP49///d/j+9//fvz4xz+OLVu2xBlnnBH79u0L999/fzz22GPx3nvvxTfffBOzZ8+O4uJiDAaD6OnpCbVaLQ4fPhxvvfVW3HzzzVFVVRUjRozA4sWLY/HixTF58uRYt25d3HDDDREIBBgMBmHq1KkxevTo6O/vj5UrV0ZTUzNWrVqFhQsXxjXXXBPffvtt3H333ZgxY0a0trbG7t27Y+DAgbFjx45YuHBhXHDBBTFt2rQYP358nH322fHf//3fx4QJE2LlypWxcePG2L59e/z617+O3bt3x4YNG+L111+Pz33uc3HZZZfFpk2bYvbs2TF37tw4++yz46mnnopPf/rT8fzzz8fWrVujrq4uFixYEBMnToxXXnklNm/eHNu2bYvTTz89MjIy4vbbb49vfOMbcfjw4Rg/fnx8+eWXcfjhh8fWrVtj2LBh0d/fH7NmzYq2trZ4++23Y+vWrXHLLbfE9OnTY+bMmbF9+/Z47LHHYvPmzbFt27aYMWNGtLa2xtSpU+Pmm2+OadOmxcqVK+O1116L9evXx+DBg+P999+P7du3R5IkbNmyJRYvXhxPP/10HH744VixYkXcd9998eijj8aYMWPijTfeiIcffjjGjh0bS5YsidWrV8eOHTviww8/jPnz58fkyZPj2WefjQ8//DDmzZsXAwYMiJkzZ8b8+fPjrbfeitdffz2eeOKJmDlzZuzduzeee+65ePDBB+P555+PLVu2xPLly8M111wT5557bpx55pmxY8eOGD16dHz44Yfxt7/9LR544IFYvXr12L59e2zatCkWLVoU/fr1i9WrV8fGjRvj1KlTceutt8aDDz4Y27dvj2uuuSYefvjhWL58eVx77bXx05/+NF544YVYtWpVnH322TFt2rQ4cOBA9Pf3x5YtW+K9996L999/Pz766KM4dOhQ/OpXv4rzzz8/rrvuutiyZUuMGTMmbr/99vjhhx+itbU1Pv74YxgMBnH77bfHpk2b4uCDD45LL700Zs2aFRs2bIgxY8bE8uXL48orr4zly5fHjBkz4sMPP4zXX389Jk+eHM8880z8+te/jg8//DCefPLJWL58ecydOzf27t0bq1atijnnnBNvvfVWLF68OGbNmhVff/11vPzyy/Hjjz/G2rVrY9y4cTHPPPNEx44d4bHHHovbb789Nm3aFCNGjIiFCxeGiRMnxuuvvx4LFiyI3bt3R6/Xx7PPPhtPPfVUnH766Xj77bfj7bffjsmTJ8d9990Xjz/+eLS1tcX+/ftj9OjRce6558Zf//rXuPnmm+OMM86I4uJi/PWvf40XXngh5s6dG4sWLYoVK1bE7373u2jZsmU4d+5cPPHEE7Fq1aq4/vrr4/zzz4+//OUvccopp8STTz4Zr7/+etx4443xwAMPxLPPPhtjx46NnTt3xtKlS+O0006L9evXx+LFizF8+PC4/fbbY9myZfHQQw/Fhg0b4uabb46FCxfGgAED4t13343Vq1fH/Pnz49NPP40f/vCH8eSTT8ZLL70Ujz76aKxcuTK6urqio6Mjbr755ti8eXNcc8018f7778fxxx8fTzzxRJx++unxv//3/7Fz587YunVrjBw5MtasWROPPfZYfP7553HjjTfG5MmTY+vWrbFr164YNWpUXHbZZXHPPfdEIBBAXV1dHH744fHyyy/HjBkzYuzYsfH666/HjBkzYtiwYTF79ux49tlnY86cOXHWWWeF0WgUn376aSxatCiWL18eH330Udx1112xefPmWLJkSdx7772xePHiuP/++6Oqqiref//9eP7552Pp0qXx/fffR1VVVXz44Yfx+uuvx4YNG2LlypVx9dVXx9q1a2PQoEExffr0eOedd2LlypWxdu3auP/++2P58uWxcePGGDRoUNxwww1x2223xbPPPhtTp06NQ4cOxeHDh+P111+P3bt3R5IkLFu2LB544IFYuHBh/OQnP4mTTz45Nm3aFH/84x/j5ptvjqlTp8YVV1wRixcvjlWrVsWIESPijjvuiPb29rj66qtj8uTJsWDBgliwYEH88Ic/jCuuuCIOHjwYb775Ztxyyy0xZcqUmD9/fqxYsSK6urritttui6VLl8bEiRPj+eefj8ceezyee+65WLp0acydOzfWrVsXc+fOjZkzZ8bEiRPx9NNPx9NPPx2ff/55PP744/Hwww/Hb3/72/jss89ix44d8cADD8Qpp5wS1113XaxcuTLefPPNGDduXAwYMCB27doVb7zxRkxNTcXbb78dDzzwQJxwwgnR1NQUr776asydOzc2b94cTzzxRPz+97+Po48+OjZs2BDHjh2LQ4cOxfr162PatGmxcOHCWLJkScydOzeWL18eW7dujVNOOSXuu+++mDt3bly4cCFWrVoVb775ZgwePDi2bt0aBQUFcfnll8c555wTixYtildeeaVYv359XHfddTF58uQ4fPhw7N69O44//vj45ptv4rnnnosnn3wyNm7cGJIkYdeuXeP111+PSZMmxbJly+Lpp5+OX/7yl+Pss8+OcePGxYYNG2LJkiVx6aWXxvTp0+P111+P7u7u2Lt3bzz11FNxzTXXxB133BGDBg2KMWPGxJYtW2LKlCnx7bffxvTp0+Pxxx+PSZMmxQsvvBDHjh2LZ555Jg4ePBjHjh2LgoKCmDt3bsydOzfWrFkTn3zySZx88slxySWXxIIFC+K2226L1atXx6RJk+K+++6Ld999N1auXBmvvvpqPPbYY3HppZfG/Pnz48orr4wHHnggjj766PjLX/4SP/zhD+PBBx+MZcuWxdKlS2P79u3x5z//Ob799tsYOHBg3HPPPfHJJ5/E5s2bY9GiRXH33XfHbbfdFqeddlpcc801cdVVV8XTTz8d5557buzduze+8pWvxMsvvxz9/f3R2NiIv//978f+/ftj8uTJcdlll8XatWvj6aefjscee2yceeaZ8fLLL8ezzz4bN998czz44IPx0EMPRX19fQwcODBmzJgRixYtirfeeivGjRsXb731VsyfPz8efvjhWLJkSdxwww2xcuXKuPPOO+P111+PH374IX73u9/F6NGjY8CAAbFq1ap45ZVX4rfffovzzjsvPv/888jKyoqysjJceOGF8fDDD8fTTz8dgwYNiq6urrjppptixYoV8fDDD8fll18eGzZsiMcee6wYNGhQfPjhh/Hf//3fx4IFC2LJkiXxzDPPxAMPPBDXX3993HDDDWEYBp577rlYtWpV/O///m8ce+yx+Otf/xqLFi2K8vLyWLt2bVx66aUxYcKEeOutt6K0tDSWLl0a06dPj0mTJsW6devi5JNPjm3btkVLS0t85zvfie7u7rj33ntj9OjRcc0118Qpp5wS3/zmN+P111+P66+/PiZNmhSDBw+OhQsXxtNPPx2XL18ex48fj4svvjiiKIq77747nnjiibj66qtj8+bNcfPNN8f27dujo6MjFixYEGvWrImFCxfG8ePHx0UXXRSrV6+OzZs3x/Tp06O9vT22b98e+fn5ceedd8YTTzwR8+bNiwsuuCC2bt0ahw8fjr1798aAAQNi7ty5sWHDhrj99tvj5ptvjiVLlsTJJ58cr7zySjz00ENx7LHHxtKlS+Pzzz+PZ555Jj788MOorKxM3nzzzaioqoowGo0YMGBA7N69O0aPHh1TpkxBUlISzzzzTCxYsCB27doVt912W7z22mvx6KOPxj333BNr1qyJpUuXxgcffBC33XZb3HXXXWEYBsrLy+PDDz+M8ePHx5kzZ8b69evj4IMPjo0bN8aWLVvi8ccfjxkzZsSYMWNi2LBh8corr8TcuXPj5ptvjqlTp0YikYjPP/88Pvroo+jq6oqFCxfG0aNHY+zYsTHixAnx4IMPxvTp0+Pxxx+PVatWxUcfffQ8/1dEREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREWv8f7klT4DCP4k1AAAAAElFTkSuQmCC";
 
 const MenuIcon = ({ size = 16, color = 'currentColor' }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -52,19 +46,22 @@ const styles = `
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
   body {
     font-family: var(--font-display);
     overflow: hidden;
-    height: 100vh;
+    background: #050505;
   }
 
   .liquid-glass {
-    background: rgba(255,255,255,0.01);
-    background-blend-mode: luminosity;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: none;
-    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.12);
     position: relative;
     overflow: hidden;
   }
@@ -73,85 +70,36 @@ const styles = `
     content: '';
     position: absolute;
     inset: 0;
-    padding: 1.4px;
     border-radius: inherit;
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,0.45) 0%,
-      rgba(255,255,255,0.15) 20%,
-      transparent 40%,
-      transparent 60%,
-      rgba(255,255,255,0.15) 80%,
-      rgba(255,255,255,0.45) 100%
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
     pointer-events: none;
-    z-index: 1;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
   }
 
   .liquid-glass-strong {
-    background: rgba(255,255,255,0.01);
-    background-blend-mode: luminosity;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    border: none;
-    box-shadow:
-      4px 4px 4px rgba(0,0,0,0.05),
-      inset 0 1px 1px rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.045);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 50px rgba(0,0,0,0.22);
     position: relative;
     overflow: hidden;
-  }
-
-  .liquid-glass-strong::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 1.4px;
-    border-radius: inherit;
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,0.5) 0%,
-      rgba(255,255,255,0.2) 20%,
-      transparent 40%,
-      transparent 60%,
-      rgba(255,255,255,0.2) 80%,
-      rgba(255,255,255,0.5) 100%
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: 1;
   }
 
   .root {
     position: relative;
     width: 100vw;
     height: 100vh;
-    display: flex;
     overflow: hidden;
-    background: #0f172a;
+    background: #050505;
   }
 
   .video-bg {
     position: absolute;
     inset: 0;
-    z-index: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: 0;
   }
 
   .video-tint {
@@ -160,9 +108,9 @@ const styles = `
     z-index: 1;
     pointer-events: none;
     background:
-      radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 35%),
-      radial-gradient(circle at bottom right, rgba(255,255,255,0.08), transparent 30%),
-      linear-gradient(135deg, rgba(15,23,42,0.18) 0%, rgba(30,41,59,0.12) 40%, rgba(49,46,129,0.16) 100%);
+      radial-gradient(circle at center top, rgba(255,255,255,0.06), transparent 30%),
+      linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.28)),
+      linear-gradient(135deg, rgba(0,0,0,0.32), rgba(22,22,22,0.18) 45%, rgba(70,70,70,0.14));
   }
 
   .panels {
@@ -174,24 +122,24 @@ const styles = `
   }
 
   .left-panel {
-    width: 52%;
+    width: 54%;
     height: 100%;
     padding: 1.5rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
   }
 
   .left-glass-overlay {
     position: absolute;
     inset: 1.5rem;
-    border-radius: 1.5rem;
+    border-radius: 1.75rem;
     z-index: 0;
   }
 
   .left-content {
     position: relative;
-    z-index: 10;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -201,50 +149,51 @@ const styles = `
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1rem;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
   }
 
   .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    min-width: 0;
   }
 
-  .logo-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .nav-logo-image {
+    width: 52px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.15));
+    flex-shrink: 0;
   }
 
   .nav-brand {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.25rem;
-    letter-spacing: -0.05em;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    letter-spacing: -0.04em;
     color: white;
+    white-space: nowrap;
   }
 
   .menu-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.9rem;
+    gap: 0.45rem;
+    padding: 0.45rem 0.95rem;
     border-radius: 9999px;
     border: none;
     background: transparent;
     color: white;
     font-family: var(--font-display);
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
   }
 
-  .menu-btn:hover { transform: scale(1.05); }
-  .menu-btn:active { transform: scale(0.95); }
+  .menu-btn:hover { transform: scale(1.04); }
 
   .hero-center {
     flex: 1;
@@ -252,62 +201,69 @@ const styles = `
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 1rem 1.5rem;
     gap: 1.5rem;
+    padding: 1rem 1.5rem;
   }
 
   .hero-logo {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: min(34vw, 260px);
+    max-width: 260px;
+    animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+    animation-delay: 0.2s;
+  }
+
+  .hero-logo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 0 28px rgba(255,255,255,0.16));
   }
 
   .hero-h1 {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(2.6rem, 5vw, 3.8rem);
-    line-height: 1.05;
-    letter-spacing: -0.05em;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.04;
+    letter-spacing: -0.055em;
     color: white;
+    animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+    animation-delay: 0.35s;
   }
 
   .hero-h1 em {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 300;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.82);
   }
 
   .cta-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.7rem 1.4rem 0.7rem 1rem;
+    gap: 0.8rem;
+    padding: 0.72rem 1.4rem 0.72rem 1rem;
     border-radius: 9999px;
     border: none;
     background: transparent;
     color: white;
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     font-weight: 500;
     cursor: pointer;
-    transition: transform 0.2s;
-    letter-spacing: 0.01em;
+    transition: transform 0.2s ease;
+    animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+    animation-delay: 0.5s;
   }
 
-  .cta-btn:hover { transform: scale(1.05); }
-  .cta-btn:active { transform: scale(0.95); }
+  .cta-btn:hover { transform: scale(1.04); }
 
   .cta-icon {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    display: flex;
+    background: rgba(255,255,255,0.14);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
   }
@@ -315,57 +271,53 @@ const styles = `
   .pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.55rem;
+    animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+    animation-delay: 0.65s;
   }
 
   .pill {
-    padding: 0.35rem 0.9rem;
+    padding: 0.38rem 0.92rem;
     border-radius: 9999px;
-    font-size: 0.7rem;
-    font-family: var(--font-display);
-    color: rgba(255,255,255,0.8);
-    cursor: default;
-    transition: transform 0.2s;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.84);
     letter-spacing: 0.02em;
   }
 
-  .pill:hover { transform: scale(1.05); }
-
   .bottom-quote {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.5rem 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.45rem;
+    animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+    animation-delay: 0.8s;
   }
 
   .quote-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    font-family: var(--font-display);
+    color: rgba(255,255,255,0.52);
   }
 
   .quote-text {
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: rgba(255,255,255,0.85);
+    font-size: 0.97rem;
     line-height: 1.5;
+    color: rgba(255,255,255,0.86);
   }
 
   .quote-text .serif {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 300;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.72);
   }
 
   .quote-author {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-top: 0.25rem;
+    margin-top: 0.2rem;
   }
 
   .author-line {
@@ -378,17 +330,15 @@ const styles = `
     font-size: 0.6rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    font-family: var(--font-display);
+    color: rgba(255,255,255,0.54);
   }
 
   .right-panel {
-    width: 48%;
-    height: 100%;
+    width: 46%;
     display: none;
     flex-direction: column;
-    padding: 1.5rem;
     gap: 1rem;
+    padding: 1.5rem;
   }
 
   @media (min-width: 1024px) {
@@ -397,21 +347,19 @@ const styles = `
 
   .right-top {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
   }
 
   .contact-pill {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.55rem 0.9rem;
+    gap: 0.55rem;
+    padding: 0.58rem 0.95rem;
     border-radius: 9999px;
-    color: rgba(255,255,255,0.9);
-    font-family: var(--font-display);
-    font-size: 0.72rem;
+    color: rgba(255,255,255,0.94);
     text-decoration: none;
-    transition: transform 0.2s;
+    font-size: 0.73rem;
+    transition: transform 0.2s ease;
   }
 
   .contact-pill:hover { transform: scale(1.04); }
@@ -420,37 +368,35 @@ const styles = `
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.7);
-    box-shadow: 0 0 12px rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.78);
+    box-shadow: 0 0 12px rgba(255,255,255,0.32);
     flex-shrink: 0;
   }
 
   .community-card {
-    width: 16rem;
+    width: 17rem;
     padding: 1rem;
     border-radius: 1rem;
     align-self: flex-end;
   }
 
   .community-title {
-    font-family: var(--font-display);
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 500;
     color: white;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.36rem;
   }
 
   .community-desc {
-    font-family: var(--font-display);
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.5;
+    font-size: 0.66rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.62);
   }
 
   .feature-section {
     margin-top: auto;
     padding: 1rem;
-    border-radius: 2.5rem;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -463,60 +409,61 @@ const styles = `
 
   .feature-card {
     flex: 1;
-    padding: 1.1rem;
-    border-radius: 1.5rem;
+    padding: 1.05rem;
+    border-radius: 1.35rem;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.62rem;
   }
 
   .feature-icon-wrap {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    display: flex;
+    background: rgba(255,255,255,0.11);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.72);
   }
 
   .feature-title {
-    font-family: var(--font-display);
-    font-size: 0.75rem;
+    font-size: 0.76rem;
     font-weight: 500;
     color: white;
   }
 
   .feature-desc {
-    font-family: var(--font-display);
-    font-size: 0.62rem;
-    color: rgba(255,255,255,0.5);
+    font-size: 0.63rem;
     line-height: 1.5;
+    color: rgba(255,255,255,0.55);
   }
 
   .bottom-card {
     padding: 0.9rem 1rem;
-    border-radius: 1.5rem;
+    border-radius: 1.35rem;
     display: flex;
     align-items: center;
     gap: 0.9rem;
   }
 
-  .flower-thumb {
-    width: 80px;
-    height: 56px;
-    border-radius: 0.75rem;
-    background: rgba(255,255,255,0.08);
-    overflow: hidden;
-    flex-shrink: 0;
+  .thumb-logo {
+    width: 92px;
+    height: 60px;
+    border-radius: 0.8rem;
+    background: rgba(255,255,255,0.07);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
   }
 
-  .flower-thumb svg {
-    opacity: 0.3;
+  .thumb-logo img {
+    width: 86%;
+    height: auto;
+    display: block;
+    opacity: 0.92;
   }
 
   .bottom-card-content {
@@ -525,18 +472,16 @@ const styles = `
   }
 
   .bottom-card-title {
-    font-family: var(--font-display);
-    font-size: 0.75rem;
+    font-size: 0.76rem;
     font-weight: 500;
     color: white;
     margin-bottom: 0.2rem;
   }
 
   .bottom-card-desc {
-    font-family: var(--font-display);
     font-size: 0.62rem;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.4;
+    line-height: 1.42;
+    color: rgba(255,255,255,0.54);
   }
 
   .plus-btn {
@@ -545,54 +490,26 @@ const styles = `
     border-radius: 50%;
     border: none;
     background: transparent;
-    color: rgba(255,255,255,0.7);
-    font-size: 1.2rem;
-    display: flex;
+    color: rgba(255,255,255,0.74);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: transform 0.2s;
-    flex-shrink: 0;
-    font-family: var(--font-display);
   }
-
-  .plus-btn:hover { transform: scale(1.05); }
-  .plus-btn:active { transform: scale(0.95); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .anim-fade-up {
-    animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
-  }
-
-  .delay-1 { animation-delay: 0.1s; }
-  .delay-2 { animation-delay: 0.2s; }
-  .delay-3 { animation-delay: 0.35s; }
-  .delay-4 { animation-delay: 0.5s; }
-  .delay-5 { animation-delay: 0.65s; }
-  .delay-6 { animation-delay: 0.8s; }
-
-  .right-panel { animation: fadeIn 1s ease both 0.3s; }
-
   @media (max-width: 1023px) {
     .left-panel {
       width: 100%;
     }
 
-    .hero-center {
-      padding-right: 2rem;
-    }
-
-    .hero-h1 {
-      font-size: clamp(2.2rem, 8vw, 3.4rem);
+    .hero-logo {
+      width: min(50vw, 240px);
     }
   }
 
@@ -605,19 +522,29 @@ const styles = `
       inset: 1rem;
     }
 
-    .nav,
-    .hero-center,
-    .bottom-quote {
+    .nav, .hero-center, .bottom-quote {
       padding-left: 1rem;
       padding-right: 1rem;
     }
 
-    .pills {
-      gap: 0.4rem;
+    .nav-logo-image {
+      width: 44px;
+    }
+
+    .nav-brand {
+      font-size: 1rem;
+    }
+
+    .hero-logo {
+      width: min(58vw, 220px);
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.15rem, 9vw, 3.05rem);
     }
 
     .pill {
-      font-size: 0.65rem;
+      font-size: 0.66rem;
     }
   }
 `;
@@ -642,13 +569,12 @@ export default function CreatorsCompassLanding() {
             <div className="left-glass-overlay liquid-glass-strong" />
 
             <div className="left-content">
-              <nav className="nav anim-fade-up delay-1">
+              <nav className="nav">
                 <div className="nav-logo">
-                  <div className="logo-circle">
-                    <SparklesIcon size={14} color="rgba(255,255,255,0.8)" />
-                  </div>
+                  <img className="nav-logo-image" src={CREST_LOGO} alt="Creator's Compass logo" />
                   <span className="nav-brand">Creator&apos;s Compass</span>
                 </div>
+
                 <button className="menu-btn liquid-glass" style={{ borderRadius: '9999px' }}>
                   <MenuIcon size={14} />
                   Menu
@@ -656,23 +582,23 @@ export default function CreatorsCompassLanding() {
               </nav>
 
               <div className="hero-center">
-                <div className="hero-logo anim-fade-up delay-2">
-                  <SparklesIcon size={28} color="rgba(255,255,255,0.7)" />
+                <div className="hero-logo">
+                  <img className="hero-logo-image" src={CREST_LOGO} alt="Creator's Compass crest" />
                 </div>
 
-                <h1 className="hero-h1 anim-fade-up delay-3">
+                <h1 className="hero-h1">
                   Guiding creators toward the <br />
                   <em>right partners for the vision</em>
                 </h1>
 
-                <button className="cta-btn liquid-glass-strong anim-fade-up delay-4" style={{ borderRadius: '9999px' }}>
+                <button className="cta-btn liquid-glass-strong" style={{ borderRadius: '9999px' }}>
                   <div className="cta-icon">
                     <ArrowRightIcon size={13} />
                   </div>
                   Start the Conversation
                 </button>
 
-                <div className="pills anim-fade-up delay-5">
+                <div className="pills">
                   {['Creative Partnerships', 'Vision Strategy', 'Project Facilitation'].map((label) => (
                     <div key={label} className="pill liquid-glass">
                       {label}
@@ -681,7 +607,7 @@ export default function CreatorsCompassLanding() {
                 </div>
               </div>
 
-              <div className="bottom-quote anim-fade-up delay-6">
+              <div className="bottom-quote">
                 <div className="quote-label">Creator-Led Consulting</div>
                 <div className="quote-text">
                   We help creators clarify the destination, align the right collaborators, and move ideas from <span className="serif">spark to reality.</span>
@@ -703,7 +629,7 @@ export default function CreatorsCompassLanding() {
               </a>
             </div>
 
-            <div className="community-card liquid-glass" style={{ alignSelf: 'flex-end' }}>
+            <div className="community-card liquid-glass">
               <div className="community-title">A strategic partner for bold creative work</div>
               <div className="community-desc">
                 Creator&apos;s Compass connects artists, brands, producers, and operators so each project has the right people behind it from the start.
@@ -734,21 +660,8 @@ export default function CreatorsCompassLanding() {
               </div>
 
               <div className="bottom-card liquid-glass">
-                <div className="flower-thumb">
-                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                    <circle cx="20" cy="20" r="5" fill="rgba(255,255,255,0.6)" />
-                    {[0, 60, 120, 180, 240, 300].map((deg, i) => (
-                      <ellipse
-                        key={i}
-                        cx="20"
-                        cy="20"
-                        rx="4"
-                        ry="9"
-                        fill="rgba(255,255,255,0.4)"
-                        transform={`rotate(${deg} 20 20) translate(0 -10)`}
-                      />
-                    ))}
-                  </svg>
+                <div className="thumb-logo">
+                  <img src={CREST_LOGO} alt="" aria-hidden="true" />
                 </div>
 
                 <div className="bottom-card-content">
