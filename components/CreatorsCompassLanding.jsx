@@ -575,10 +575,7 @@ export default function CreatorsCompassLanding() {
                   
                 </div>
 
-                <button className="menu-btn liquid-glass" style={{ borderRadius: '9999px' }}>
-                  <MenuIcon size={14} />
-                  Menu
-                </button>
+               
               </nav>
 
               <div className="hero-center">
