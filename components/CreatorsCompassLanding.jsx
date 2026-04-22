@@ -154,14 +154,15 @@ const styles = `
     object-fit: cover;
   }
 
-  .video-fallback {
+  .video-tint {
     position: absolute;
     inset: 0;
     z-index: 1;
+    pointer-events: none;
     background:
-      radial-gradient(circle at top left, rgba(255,255,255,0.14), transparent 35%),
-      radial-gradient(circle at bottom right, rgba(255,255,255,0.1), transparent 30%),
-      linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #312e81 100%);
+      radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 35%),
+      radial-gradient(circle at bottom right, rgba(255,255,255,0.08), transparent 30%),
+      linear-gradient(135deg, rgba(15,23,42,0.18) 0%, rgba(30,41,59,0.12) 40%, rgba(49,46,129,0.16) 100%);
   }
 
   .panels {
@@ -634,7 +635,7 @@ export default function CreatorsCompassLanding() {
           muted
           playsInline
         />
-        <div className="video-fallback" />
+        <div className="video-tint" />
 
         <div className="panels">
           <div className="left-panel">
