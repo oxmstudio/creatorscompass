@@ -143,7 +143,7 @@ export default function CreatorsCompassHero() {
         <div className="hero-content">
           <div className="hero-inner">
             
-            <h1 className="hero-heading">Where the Right People Find Each Other</h1>
+            <h1 className="hero-heading">Getting Creative Visionaries The Best Results In The Shortest Period Of Time</h1>
             <p className="hero-subtitle">
               Creator's Compass connects founders, studios, and industry leaders with the partners,
               collaborators, and capital they need to grow — turning the right relationships into
