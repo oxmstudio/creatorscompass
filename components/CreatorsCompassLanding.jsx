@@ -582,8 +582,8 @@ export default function CreatorsCompassLanding() {
                 
 
                 <h1 className="hero-h1">
-                  Guiding creators toward the <br />
-                  <em>right partners for the vision</em>
+                  Guiding creators towards<br />
+                  <em>partners for their vision</em>
                 </h1>
 
                 <button className="cta-btn liquid-glass-strong" style={{ borderRadius: '9999px' }}>
@@ -624,12 +624,7 @@ export default function CreatorsCompassLanding() {
               </a>
             </div>
 
-            <div className="community-card liquid-glass">
-              <div className="community-title">A strategic partner for bold creative work</div>
-              <div className="community-desc">
-                Creator&apos;s Compass connects artists, brands, producers, and operators so each project has the right people behind it from the start.
-              </div>
-            </div>
+           
 
             <div className="feature-section liquid-glass">
               <div className="feature-row">
@@ -659,12 +654,7 @@ export default function CreatorsCompassLanding() {
                   <img src={CREST_LOGO} alt="" aria-hidden="true" />
                 </div>
 
-                <div className="bottom-card-content">
-                  <div className="bottom-card-title">Facilitated Execution</div>
-                  <div className="bottom-card-desc">
-                    From introductions to momentum, we help keep the right creative team moving in the same direction.
-                  </div>
-                </div>
+                
 
                 <button className="plus-btn liquid-glass" style={{ borderRadius: '50%' }}>
                   +
