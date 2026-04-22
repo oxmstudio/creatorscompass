@@ -572,7 +572,7 @@ export default function CreatorsCompassLanding() {
               <nav className="nav">
                 <div className="nav-logo">
                   
-                  <span className="nav-brand">Creator&apos;s Compass</span>
+                  
                 </div>
 
                 <button className="menu-btn liquid-glass" style={{ borderRadius: '9999px' }}>
