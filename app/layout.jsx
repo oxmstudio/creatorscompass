@@ -1,6 +1,7 @@
 export const metadata = {
-  title: "Creator's Compass",
-  description: "Creative consulting agency connecting creators with the right partners.",
+  title: "Creator's Compass | Creative Partnership Consulting",
+  description:
+    "Creator's Compass connects founders, studios, artists, and industry leaders with aligned partners, collaborators, and capital.",
 };
 
 export default function RootLayout({ children }) {
