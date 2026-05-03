@@ -1,3 +1,5 @@
+import "./animated-backgrounds.css";
+
 export const metadata = {
   title: "Creator's Compass | Creative Partnership Consulting",
   description:
