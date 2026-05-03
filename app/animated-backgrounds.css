@@ -58,6 +58,12 @@
   opacity: 1;
 }
 
+@media (max-width: 720px) {
+  .nav {
+    display: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #process::before,
   #process::after,
