@@ -1,3 +1,24 @@
+.compass-orb {
+  background-image: url('/compass-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.compass-center {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  box-shadow: 0 0 20px rgba(255,255,255,0.35) !important;
+}
+
+.compass-center::before {
+  content: '' !important;
+}
+
 #process,
 #compass,
 #paths,
